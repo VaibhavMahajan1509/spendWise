@@ -1,0 +1,120 @@
+/* Navbar Styles */
+.navbar {
+  /* background-color: #3e4649; Black background */
+  background: linear-gradient(135deg, #0599ef 50%, #0762fe 100%);
+  padding: 1rem 2rem; /* Add more padding for spacious feel */
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+  transition: background-color 0.3s ease;
+}
+
+.navbar:hover {
+  background-color: #333; /* Darker shade when hovered */
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700; /* Heavier font weight for prominence */
+  color: white;; /* Bright yellow color */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.logo:hover {
+  color:  #084eff; /* Lighter yellow on hover */
+}
+
+.menuButton {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.menuButton:hover {
+  color: #ffeb3b; /* Light yellow on hover */
+}
+
+.navLinks {
+  display: flex;
+  gap: 2rem;
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.4rem;
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.link:hover {
+  color: rgb(251, 251, 251); /* Yellow color on hover */
+  transform: translateY(-3px); /* Slight lift effect on hover */
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #d802fe;
+  transition: width 0.3s ease;
+}
+
+.link:hover::after {
+  width: 100%; /* Underline animation on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .menuButton {
+    display: block;
+  }
+
+  .navLinks {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    position: absolute;
+    top: 100%;
+    right: 1rem;
+    background-color: #000000;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  .show {
+    display: flex;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
